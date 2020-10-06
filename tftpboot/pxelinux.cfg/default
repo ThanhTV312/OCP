@@ -1,0 +1,23 @@
+default vesamenu.c32
+prompt 0
+timeout 600
+display boot.msg
+menu title **** OpenShift 4 PXE Boot Menu ****
+label Install CoreOS Bootstrap Node
+kernel /ocp/rhcos-kernel
+append ip=172.20.10.130::172.20.10.2:255.255.255.0:bootstrap.ocp-cluster.openshift.local:ens33:none nameserver=172.20.10.21 rd.neednet=1 initrd=/ocp/rhcos-initramfs.img coreos.inst=yes coreos.inst.install_dev=sda coreos.inst.image_url=http://172.20.10.21:8080/rhcos.raw.gz coreos.inst.ignition_url=http://172.20.10.21:8080/bootstrap.ign
+label Install CoreOS Master Node 1
+kernel /ocp/rhcos-kernel
+append ip=172.20.10.131::172.20.10.2:255.255.255.0:control-plane-0.ocp-cluster.openshift.local:ens33:none nameserver=172.20.10.21 rd.neednet=1 initrd=/ocp/rhcos-initramfs.img coreos.inst=yes coreos.inst.install_dev=sda coreos.inst.image_url=http://172.20.10.21:8080/rhcos.raw.gz coreos.inst.ignition_url=http://172.20.10.21:8080/master.ign
+label Install CoreOS Master Node 2
+kernel /ocp/rhcos-kernel
+append ip=172.20.10.132::172.20.10.2:255.255.255.0:control-plane-1.ocp-cluster.openshift.local:ens33:none nameserver=172.20.10.21 rd.neednet=1 initrd=/ocp/rhcos-initramfs.img coreos.inst=yes coreos.inst.install_dev=sda coreos.inst.image_url=http://172.20.10.21:8080/rhcos.raw.gz coreos.inst.ignition_url=http://172.20.10.21:8080/master.ign
+label Install CoreOS Master Node 3
+kernel /ocp/rhcos-kernel
+append ip=172.20.10.133::172.20.10.2:255.255.255.0:control-plane-2.ocp-cluster.openshift.local:ens33:none nameserver=172.20.10.21 rd.neednet=1 initrd=/ocp/rhcos-initramfs.img coreos.inst=yes coreos.inst.install_dev=sda coreos.inst.image_url=http://172.20.10.21:8080/rhcos.raw.gz coreos.inst.ignition_url=http://172.20.10.21:8080/master.ign
+label Install CoreOS Worker Node 1
+kernel /ocp/rhcos-kernel
+append ip=172.20.10.134::172.20.10.2:255.255.255.0:compute-0.ocp-cluster.openshift.local:ens33:none nameserver=172.20.10.21 rd.neednet=1 initrd=/ocp/rhcos-initramfs.img coreos.inst=yes coreos.inst.install_dev=sda coreos.inst.image_url=http://172.20.10.21:8080/rhcos.raw.gz coreos.inst.ignition_url=http://172.20.10.21:8080/worker.ign
+label Install CoreOS Worker Node 2
+kernel /ocp/rhcos-kernel
+append ip=172.20.10.135::172.20.10.2:255.255.255.0:compute-1.ocp-cluster.openshift.local:ens33:none nameserver=172.20.10.21 rd.neednet=1 initrd=/ocp/rhcos-initramfs.img coreos.inst=yes coreos.inst.install_dev=sda coreos.inst.image_url=http://172.20.10.21:8080/rhcos.raw.gz coreos.inst.ignition_url=http://172.20.10.21:8080/worker.ign

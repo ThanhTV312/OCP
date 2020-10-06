@@ -1,0 +1,10 @@
+#Foward
+zone "openshift.local" {
+    type master;
+    file "/etc/named/zones/db.openshift.local"; # zone file path
+};
+#Reverse
+zone "10.20.172.in-addr.arpa" {
+    type master;
+    file "/etc/named/zones/db.172.20.10";  # 172.20.10.0/24 subnet
+};

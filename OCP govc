@@ -1,0 +1,205 @@
+mkdir ~/bin
+cd /tmp/
+export TERRAFORM_VERSION=0.13.2
+curl -O -L https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d ~/bin/
+terraform -v
+
+----
+
+mkdir ~/bin
+export GOVC_URL=https://github.com/vmware/govmomi/releases/download/v0.23.0/govc_linux_amd64.gz
+curl -L ${GOVC_URL} | gunzip > ~/bin/govc
+chmod +x ~/bin/govc
+govc version
+
+
+git clone https://github.com/openshift/installer.git
+
+
+git clone https://github.com/ibm-cloud-architecture/terraform-openshift4-vmware.git
+
+
+cd installer/upi/vsphere
+
+datastore1
+
+ssh-keygen -t rsa -b 4096 -N ''
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_rsa
+
+yum install haproxy -y
+
+/etc/sysctl.conf
+net.ipv4.ip_nonlocal_bind=1
+sysctl -p
+
+
+--
+yum install –y httpd
+
+vi /etc/httpd/conf/httpd.conf
+#Change Listen 80 to Listen 8080
+
+sudo systemctl enable httpd
+sudo systemctl start httpd
+
+curl -I http://localhost:8080
+
+{"auths":{"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3RoYW5odHZhbWlnb3ZuMWRsYnc1bmJqa2I1bTZ5dmlvdXVzdTd4am1nOkZDUk0yRk5FSEs5ODhLRTAwSjU5VU9DMkIzMjdOM0s1TzlDTzRMMVBEOVI4VjlRNE9XNkVSSDAxUkhGWFpURUg=","email":"thanh.tv@amigo.vn"},"quay.io":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3RoYW5odHZhbWlnb3ZuMWRsYnc1bmJqa2I1bTZ5dmlvdXVzdTd4am1nOkZDUk0yRk5FSEs5ODhLRTAwSjU5VU9DMkIzMjdOM0s1TzlDTzRMMVBEOVI4VjlRNE9XNkVSSDAxUkhGWFpURUg=","email":"thanh.tv@amigo.vn"},"registry.connect.redhat.com":{"auth":"NTI4MTA3MTJ8dWhjLTFkbEJ3NU5CaktCNW02eXZpT3V1U1U3eGpNRzpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSmtaRE5oTWpRMlpqUXdaRGMwTURFME9ETmlNelUyWkRRellUbGtaV1ZsTVNKOS53dmNiN2tRUllEdmZnUXB2a0NUVnJEQ3NmVzJwRmFoX3BHQ3g2bHZwTkJWNkltekpIWlV2M3JzS191d0dFMTUtakEycEM0dzhMaVNoS0ltbkRCUndQblB1anZnejhIWk9aM1JSbkVKcVFDb0FqMFV3a1BWdy1xLUk5T2QyaTJmZjg1UDNVRWJRNjlWRm5CQjM5bjhybGhZbkZtUHVqZVEyZ3hhSG1ta2V4N2JOUk9UdzgzdGJ1QTUwbFlrV0JoTG83Y3ZzQnE5S2p6YXlIeFdMd25sZEVsYlZjZzNqVVFzaWhvVm5ROGJfLS12Q0JidFowZ2tzSUhWTElDRnJaWVd1T1A0UGpZbHJ6TkhoaTZtSnp0NjNBa3pCS1QzalZqUlE2eEN4c09heldjWkp1eEdaVkxBM3NuM0ZwWjBBLUhGV0lmLXFqVmo3TkRSM1d4TDg3MVc2RnBvUXdqbEVYeFB6OXluNVJrNWd2YXg0MlA1RWNZLVlIVTJIWV82NXNOajN5ZVAyREQxdFdpZHQ4a0s0bkJRTjFaR0hGWm1DbTcyVDFySXN0MVV4Mllua2hpaGJTd3JlbS1PZjdaTXRPbWpscEs1dENuVmhQZW1Wejd4YW5nZEZjSk14WEJoaDZnTFRYLTRDTVR2dndHRHplbzF1U01DMmx0WWRXNk5NLVVRdzBNZEFOMGRoZE5CclRxLUNaTVVtYlpMaGJMeGFsYkE5QkNPMHIzNnJ1akFvcG1FMGFXTUtaS0R5b3BSdmNyVWlRZndCUzNYc3pDN19hLVVVYnpNUVd2bnd1QnVEUG9nYk9PamlVNVJpalZ1bEh5LWVjb3ZSbXQ4dW5TWVctLWpVVGVCb19sVFliVm1sazVqdm5adEd3d2tQa2lHTGZUdzYxb2VjLTR0bENlOA==","email":"thanh.tv@amigo.vn"},"registry.redhat.io":{"auth":"NTI4MTA3MTJ8dWhjLTFkbEJ3NU5CaktCNW02eXZpT3V1U1U3eGpNRzpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSmtaRE5oTWpRMlpqUXdaRGMwTURFME9ETmlNelUyWkRRellUbGtaV1ZsTVNKOS53dmNiN2tRUllEdmZnUXB2a0NUVnJEQ3NmVzJwRmFoX3BHQ3g2bHZwTkJWNkltekpIWlV2M3JzS191d0dFMTUtakEycEM0dzhMaVNoS0ltbkRCUndQblB1anZnejhIWk9aM1JSbkVKcVFDb0FqMFV3a1BWdy1xLUk5T2QyaTJmZjg1UDNVRWJRNjlWRm5CQjM5bjhybGhZbkZtUHVqZVEyZ3hhSG1ta2V4N2JOUk9UdzgzdGJ1QTUwbFlrV0JoTG83Y3ZzQnE5S2p6YXlIeFdMd25sZEVsYlZjZzNqVVFzaWhvVm5ROGJfLS12Q0JidFowZ2tzSUhWTElDRnJaWVd1T1A0UGpZbHJ6TkhoaTZtSnp0NjNBa3pCS1QzalZqUlE2eEN4c09heldjWkp1eEdaVkxBM3NuM0ZwWjBBLUhGV0lmLXFqVmo3TkRSM1d4TDg3MVc2RnBvUXdqbEVYeFB6OXluNVJrNWd2YXg0MlA1RWNZLVlIVTJIWV82NXNOajN5ZVAyREQxdFdpZHQ4a0s0bkJRTjFaR0hGWm1DbTcyVDFySXN0MVV4Mllua2hpaGJTd3JlbS1PZjdaTXRPbWpscEs1dENuVmhQZW1Wejd4YW5nZEZjSk14WEJoaDZnTFRYLTRDTVR2dndHRHplbzF1U01DMmx0WWRXNk5NLVVRdzBNZEFOMGRoZE5CclRxLUNaTVVtYlpMaGJMeGFsYkE5QkNPMHIzNnJ1akFvcG1FMGFXTUtaS0R5b3BSdmNyVWlRZndCUzNYc3pDN19hLVVVYnpNUVd2bnd1QnVEUG9nYk9PamlVNVJpalZ1bEh5LWVjb3ZSbXQ4dW5TWVctLWpVVGVCb19sVFliVm1sazVqdm5adEd3d2tQa2lHTGZUdzYxb2VjLTR0bENlOA==","email":"thanh.tv@amigo.vn"}}}
+
+
+export GOVC_URL='10.0.55.70'
+export GOVC_USERNAME='administrator@vsphere.local'
+export GOVC_PASSWORD='123456aA@'
+export GOVC_INSECURE=1
+export GOVC_DATASTORE='datastore1'
+
+govc about
+
+[root@rhel7 ~]# govc about
+Name:         VMware vCenter Server
+Vendor:       VMware, Inc.
+Version:      6.7.0
+Build:        13007421
+OS type:      linux-x64
+API type:     VirtualCenter
+API version:  6.7.2
+Product ID:   vpx
+UUID:         58642287-f72e-480a-8bc3-d90c364f316a
+
+govc import.spec /root/rhcos-4.5.6-x86_64-vmware.x86_64.ova | python -m json.tool > rhcos.json
+
+[root@rhel7 ~]# cat rhcos.json
+{
+    "DiskProvisioning": "flat",
+    "IPAllocationPolicy": "dhcpPolicy",
+    "IPProtocol": "IPv4",
+    "InjectOvfEnv": false,
+    "MarkAsTemplate": false,
+    "Name": null,
+    "NetworkMapping": [
+        {
+            "Name": "VM Network",
+            "Network": "VM Network"
+        }
+    ],
+    "PowerOn": false,
+    "PropertyMapping": [
+        {
+            "Key": "guestinfo.ignition.config.data",
+            "Value": ""
+        },
+        {
+            "Key": "guestinfo.ignition.config.data.encoding",
+            "Value": ""
+        }
+    ],
+    "WaitForIP": false
+}
+
+
+[root@rhel7 ~]# govc find / -type p
+/Datacenter/host/Cluster/Resources
+
+govc import.ova -options=./rhcos.json -name=rhcos-4.5.6 \
+ -pool=/Datacenter/host/Cluster/Resources  /root/rhcos-4.5.6-x86_64-vmware.x86_64.ova
+ 
+ [root@rhel7 ~]# govc import.ova -options=./rhcos.json -name=rhcos-4.5.6 \
+>  -pool=/Datacenter/host/Cluster/Resources  /root/rhcos-4.5.6-x86_64-vmware.x86_64.ova
+[25-08-20 15:23:38] Uploading disk.vmdk... OK
+
+
+govc vm.markastemplate vm/rhcos-4.5.6
+
+
+# create an install-config.yaml
+cat <<EOF > install-config.yaml
+apiVersion: v1
+baseDomain: openshift.local
+metadata:
+  name: ocp4-cluster-001
+platform:
+  vSphere:
+    vcenter: ocp-vcenter.int.consol.de
+    username: administrator@vsphere.local
+    password: mypassword
+    datacenter: Datacenter
+    defaultDatastore: vsanDatastore
+pullSecret: '{"auths":{"cloud.openshift.com":{"auth":"........"}}}'
+sshKey: ssh-rsa AAAAB3N.....
+EOF
+
+apiVersion: v1
+baseDomain: openshift.local 
+compute:
+- hyperthreading: Enabled   
+  name: worker
+  replicas: 2
+controlPlane:
+  hyperthreading: Enabled   
+  name: master
+  replicas: 3 
+metadata:
+  name: ocp-cluster.openshift.local 
+platform:
+  vsphere:
+    vcenter: 10.0.55.70
+    username: administrator@vsphere.local 
+    password: 123456aA@ 
+    datacenter: Datacenter 
+    defaultDatastore: datastore1
+fips: false 
+pullSecret: '{"auths":{"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3RoYW5odHZhbWlnb3ZuMWRsYnc1bmJqa2I1bTZ5dmlvdXVzdTd4am1nOkZDUk0yRk5FSEs5ODhLRTAwSjU5VU9DMkIzMjdOM0s1TzlDTzRMMVBEOVI4VjlRNE9XNkVSSDAxUkhGWFpURUg=","email":"thanh.tv@amigo.vn"},"quay.io":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3RoYW5odHZhbWlnb3ZuMWRsYnc1bmJqa2I1bTZ5dmlvdXVzdTd4am1nOkZDUk0yRk5FSEs5ODhLRTAwSjU5VU9DMkIzMjdOM0s1TzlDTzRMMVBEOVI4VjlRNE9XNkVSSDAxUkhGWFpURUg=","email":"thanh.tv@amigo.vn"},"registry.connect.redhat.com":{"auth":"NTI4MTA3MTJ8dWhjLTFkbEJ3NU5CaktCNW02eXZpT3V1U1U3eGpNRzpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSmtaRE5oTWpRMlpqUXdaRGMwTURFME9ETmlNelUyWkRRellUbGtaV1ZsTVNKOS53dmNiN2tRUllEdmZnUXB2a0NUVnJEQ3NmVzJwRmFoX3BHQ3g2bHZwTkJWNkltekpIWlV2M3JzS191d0dFMTUtakEycEM0dzhMaVNoS0ltbkRCUndQblB1anZnejhIWk9aM1JSbkVKcVFDb0FqMFV3a1BWdy1xLUk5T2QyaTJmZjg1UDNVRWJRNjlWRm5CQjM5bjhybGhZbkZtUHVqZVEyZ3hhSG1ta2V4N2JOUk9UdzgzdGJ1QTUwbFlrV0JoTG83Y3ZzQnE5S2p6YXlIeFdMd25sZEVsYlZjZzNqVVFzaWhvVm5ROGJfLS12Q0JidFowZ2tzSUhWTElDRnJaWVd1T1A0UGpZbHJ6TkhoaTZtSnp0NjNBa3pCS1QzalZqUlE2eEN4c09heldjWkp1eEdaVkxBM3NuM0ZwWjBBLUhGV0lmLXFqVmo3TkRSM1d4TDg3MVc2RnBvUXdqbEVYeFB6OXluNVJrNWd2YXg0MlA1RWNZLVlIVTJIWV82NXNOajN5ZVAyREQxdFdpZHQ4a0s0bkJRTjFaR0hGWm1DbTcyVDFySXN0MVV4Mllua2hpaGJTd3JlbS1PZjdaTXRPbWpscEs1dENuVmhQZW1Wejd4YW5nZEZjSk14WEJoaDZnTFRYLTRDTVR2dndHRHplbzF1U01DMmx0WWRXNk5NLVVRdzBNZEFOMGRoZE5CclRxLUNaTVVtYlpMaGJMeGFsYkE5QkNPMHIzNnJ1akFvcG1FMGFXTUtaS0R5b3BSdmNyVWlRZndCUzNYc3pDN19hLVVVYnpNUVd2bnd1QnVEUG9nYk9PamlVNVJpalZ1bEh5LWVjb3ZSbXQ4dW5TWVctLWpVVGVCb19sVFliVm1sazVqdm5adEd3d2tQa2lHTGZUdzYxb2VjLTR0bENlOA==","email":"thanh.tv@amigo.vn"},"registry.redhat.io":{"auth":"NTI4MTA3MTJ8dWhjLTFkbEJ3NU5CaktCNW02eXZpT3V1U1U3eGpNRzpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSmtaRE5oTWpRMlpqUXdaRGMwTURFME9ETmlNelUyWkRRellUbGtaV1ZsTVNKOS53dmNiN2tRUllEdmZnUXB2a0NUVnJEQ3NmVzJwRmFoX3BHQ3g2bHZwTkJWNkltekpIWlV2M3JzS191d0dFMTUtakEycEM0dzhMaVNoS0ltbkRCUndQblB1anZnejhIWk9aM1JSbkVKcVFDb0FqMFV3a1BWdy1xLUk5T2QyaTJmZjg1UDNVRWJRNjlWRm5CQjM5bjhybGhZbkZtUHVqZVEyZ3hhSG1ta2V4N2JOUk9UdzgzdGJ1QTUwbFlrV0JoTG83Y3ZzQnE5S2p6YXlIeFdMd25sZEVsYlZjZzNqVVFzaWhvVm5ROGJfLS12Q0JidFowZ2tzSUhWTElDRnJaWVd1T1A0UGpZbHJ6TkhoaTZtSnp0NjNBa3pCS1QzalZqUlE2eEN4c09heldjWkp1eEdaVkxBM3NuM0ZwWjBBLUhGV0lmLXFqVmo3TkRSM1d4TDg3MVc2RnBvUXdqbEVYeFB6OXluNVJrNWd2YXg0MlA1RWNZLVlIVTJIWV82NXNOajN5ZVAyREQxdFdpZHQ4a0s0bkJRTjFaR0hGWm1DbTcyVDFySXN0MVV4Mllua2hpaGJTd3JlbS1PZjdaTXRPbWpscEs1dENuVmhQZW1Wejd4YW5nZEZjSk14WEJoaDZnTFRYLTRDTVR2dndHRHplbzF1U01DMmx0WWRXNk5NLVVRdzBNZEFOMGRoZE5CclRxLUNaTVVtYlpMaGJMeGFsYkE5QkNPMHIzNnJ1akFvcG1FMGFXTUtaS0R5b3BSdmNyVWlRZndCUzNYc3pDN19hLVVVYnpNUVd2bnd1QnVEUG9nYk9PamlVNVJpalZ1bEh5LWVjb3ZSbXQ4dW5TWVctLWpVVGVCb19sVFliVm1sazVqdm5adEd3d2tQa2lHTGZUdzYxb2VjLTR0bENlOA==","email":"thanh.tv@amigo.vn"}}}' 
+sshKey: '	ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC4Ds/I7y8RgVM3ZAAp0foFaXO8gytqji37Plcupa6sdW6zeoedtsDcEMNfc905+Pw4srfTTrHBlcnGJ4I1f3x9Rqq546xdU16r2codmGdQUR5RHbXA66xiCBytioCaa6ek/0Ca1gwDE/TgkU27V+ZjnebYJY5Lc/dpdj2Rhwk5eSbmA2htLM9EmlY2m8drso8kl3nQWBrAvP2+6tshdo6wYOMThNBb+XYvdQGrcNSz2dLce/HoWX6jpqC5as5/f83YZYsjASoo4EJYGhMu2rOeToVDXTJoUGWCpax3cU+yLC0OEGRh+r3tfW7Ck+DcPUC1ifE6UD3Dd8qoMRVWU3v9RxlgD94UoKSxlEmIARTXaUZY/L2lmdk8q8AnLgA0Gtee7DdWZAyFXbHhc8GUCMZb3v1UarAb9QjeZRLoCnE7onTjsb6hnWAWSj1ITzV2Ol8Y1msP5wzUba+2DgymYikJrVCU2SItZRFN/rZilCyRSO5d6KXRjJfMXXXljaNecsKiguXuqcma1UWtNQn1njOdLferDB+TmgsrfE5RLX0yxvvoqrFL7jt7B99fRYMQ4D0onvIU/elBTWY02yBv8ob03XUIE1ix1PoVD+GFB9reUyGqUg0Z68xx4Xc0sctvArlL1XonxINfNB4bV4Cp0n/uovhH/PjApBHFgNcrNSfBfQ== root@rhel7.5' 
+
+cp install-config.yaml install-config.`date '+%s'`.bak
+
+./openshift-install create ignition-configs
+
+
+cp -R /root/ocp/*.ign /var/www/html/
+
+chown -R apache: /var/www/html/
+chmod -R 755 /var/www/html/
+
+curl -I http://10.0.55.80:8080/bootstrap.ign
+curl -I http://10.0.55.80:8080/master.ign
+curl -I http://10.0.55.80:8080/worker.ign
+curl -I http://10.0.55.80:8080/rhcos.raw.gz
+
+
+tar xvf openshift-client-linux-4.5.6.tar.gz ./ocp
+
+cd installer/upi/vsphere
+
+
+filesystem = "root"
+
+
+	.openshift.local
+
+terraform apply -var-file="terraform.tfvars"
+
+data "ignition_config" "ign" {
+for_each = var.hostnames_ip_addresses
+
+merge {
+  source = local.ignition_encoded
+}
+
+
+provider "vsphere" {
+ region  = "us-east-1"
+}
+
+base64 -w0 bootstrap.ign > bootstrap.64
+base64 -w0 master.ign > master.64
+base64 -w0 worker.ign > worker.64
+
+
+git clone -b release-4.1 https://github.com/openshift/installer

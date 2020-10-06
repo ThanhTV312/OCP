@@ -1,0 +1,1 @@
+echo | openssl s_client -connect api.ocp-cluster.openshift.local:6443 | openssl x509 -noout -text
